@@ -262,8 +262,8 @@ void tst_QAMQPExchange::testQueuedPublish()
 void tst_QAMQPExchange::testRejectedMessagePublish()
 {
     QAmqpTable queueArguments;
-    queueArguments["x-max-length"] = 1;  // queue can only accept one message!
-    queueArguments["x-overflow"] = "reject-publish";  // more messages will be rejected
+    queueArguments.insert("x-max-length", 1);  // queue can only accept one message!
+    queueArguments.insert("x-overflow", "reject-publish");  // more messages will be rejected
     QAmqpQueue *queue = client->createQueue("small_queue");
     queue->declare(QAmqpQueue::Exclusive | QAmqpQueue::AutoDelete, queueArguments);
     QVERIFY(waitForSignal(queue, SIGNAL(declared())));
