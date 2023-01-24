@@ -1,3 +1,9 @@
+qamqp (0.5.0-bb3) unstable; urgency=low
+
+  * Upgrade to Qt 5.15
+
+ -- Botond Petras <botond.petras@oneidentity.com>  Tue, 24 Jan 2023 11:10:00 +0000
+
 qamqp (0.5.0-bb2) unstable; urgency=low
 
   * Made auto reconnect work for basic#close errors
